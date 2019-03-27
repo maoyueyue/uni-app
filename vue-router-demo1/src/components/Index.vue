@@ -1,14 +1,17 @@
 <template>
 	<!-- 根容器 -->
 	<div class="container">
-		<router-link to="/new_course"><button class="btn">新建班课</button></router-link>
-		
+		<router-link to="/new_course"><img src="../assets/plus.png" class="logo" /></router-link>
+		<div class="t">
+			<input type="text" placeholder="搜索" class="box" />
+			<button type="button" class="search">搜索</button>
+		</div>
 		<div class="top">
 			<span class="top-tcard">进行中的班课</span>
 			<span class="top-card">{{ courses.length }}门进行中的班课</span>
 		</div>
-		
-		<hr class="hrc" />
+
+		<img src="../assets/hr.png" class="hrc" />
 		<div class="course-conainer">
 			<div class="course" v-for="(course, index) in courses" :key="index">
 				<div class="course-cover">
@@ -23,28 +26,26 @@
 					<span class="title">{{ course.courseName }}</span>
 					<br />
 					<div class="bt-card">
-					<img class="avatar" :src="course.avatar" />
-					<span class="code2" v-if="loginUserId === course.userId">
-						{{ course.username }}
-					</span>
-					<span class="title" v-else="">{{ course.username }}</span>
+						<img class="avatar" :src="course.avatar" />
+						<span class="code2" v-if="loginUserId === course.userId">
+							{{ course.username }}
+						</span>
+						<span class="title" v-else="">{{ course.username }}</span>
 
-					<span v-if="loginUserId === course.userId" class="course-code">
-						{{ course.courseCode }}
-					</span>
+						<span v-if="loginUserId === course.userId" class="course-code">
+							{{ course.courseCode }}
+						</span>
 					</div>
 				</div>
 			</div>
 		</div>
-		
-		
+
 		<div class="top">
 			<span class="top-tcard">结束的班课</span>
 			<span class="top-card">{{ finishs.length }}门结束的班课</span>
 		</div>
-		
-		
-		<hr class="hrc" />
+
+		<div><img src="../assets/hr.png" class="hrc" /></div>
 		<div class="course-conainer card">
 			<div class="course" v-for="(finish, index1) in finishs" :key="index1">
 				<div class="course-cover">
@@ -71,7 +72,6 @@
 				</div>
 			</div>
 		</div>
-		
 	</div>
 </template>
 
@@ -80,7 +80,7 @@ export default {
 	name: 'Index',
 	data() {
 		return {
-			loginUserId: 1,
+			loginUserId: 3,
 			courses: [],
 			finishs: []
 		};
@@ -170,9 +170,13 @@ export default {
 }
 .top-tcard {
 	margin-left: 10px;
+	color: black;
+	font-size: 14px;
 }
 .hrc {
-	width: 98.5%;
+	width: 98.2%;
+	margin-left: 10px;
+	margin-bottom: 10px;
 }
 .avatar {
 	width: 30px;
@@ -192,5 +196,38 @@ export default {
 	width: 100%;
 	align-items: center;
 	height: 35px;
+}
+.logo {
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	margin-left: 13px;
+	margin-top: 10px;
+}
+.t {
+	margin-left: 325px;
+	align-items: center;
+	height: 35px;
+	margin-bottom: 13px;
+}
+
+.box {
+	width: 400px;
+	height: 25px;
+	border-radius: 5px;
+	border: #00bbdd 1px solid;
+	outline: none;
+	text-indent: 10px;
+}
+
+.search {
+	height: 29px;
+	width: 50px;
+	background-color: #00bbdd;
+	color: white;
+	border-radius: 5px;
+	border: none;
+	outline: none;
+	outline: none;
 }
 </style>

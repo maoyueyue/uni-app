@@ -19,7 +19,7 @@ export default {
 	data() {
 		return {
 			id: this.$route.params.id,
-			loginUserId: 1,
+			loginUserId: 3,
 			course: {}
 		};
 	},

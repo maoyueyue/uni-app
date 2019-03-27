@@ -4,9 +4,9 @@
 			<router-link to="/">
 				<img src="./assets/logo.png" class="logo"/>
 			</router-link>
-			<router-link to="/task" class="nav nav-item">任务中心</router-link>
-			<router-link to="/lib" class="nav-item">库管理</router-link>
-			<router-link to="/ucenter" class="nav-item">许莫淇</router-link>
+			<img src="./assets/work.png" class="cover2 slogo"/><router-link to="/task" class=" nav-item">任务中心</router-link><span>|</span>
+			<img src="./assets/kuk.png" class="slogo"/><router-link to="/lib" class="nav-k nav-item">库管理</router-link><span>|</span>
+			<img src="https://public-cdn-oss.mosoteach.cn/avatar/2017/61/d24ec0850b3654911abca0c96997c826.png?v=1505461372&x-oss-process=style/s200x200" class="rad slogo"/><router-link to="/ucenter" class="nav-k nav-item">王小榴</router-link>
 		</div>
 		<div class="container"><router-view></router-view></div>
 	</div>
@@ -18,26 +18,34 @@ export default {
 };
 </script>
 
-<style>
+<style >
 #app {
 	background-color: rgb(244, 244, 244);
 }
 .header {
 	display: flex;
-	height: 80px;
+	height: 50px;
 	background-color: #fff;
-	font-size: 20px;
 	padding-left: 23.5%;
 	align-items: center;
 
 }
 .nav-item {
-	width: 100px;
-	margin-right: 75px;
+	font-size: 17px;
+	margin-left: 10px;
+	margin-right: 10px;
+	color: #333333;
+}
+.nav-k {
+	width: 55px;
+}
+span {
+	font-size: 14px;
+	color: darkgray;
 }
 .logo{
-	widows: 100px;
-	height: 35px;
+	widows: 80px;
+	height: 30px;
 	margin-right: 200px;
 }
 .container {
@@ -52,7 +60,20 @@ a {
 a:hover {
 	color: rgb(2,165,218);
 }
-.nav {
-	margin-left: 230px;
+
+.slogo {
+	width: 30px;
+	height: 30px;
+	margin-left: 10px;
 }
+.righeader {
+	align-items: center;
+}
+.rad {
+	border-radius: 50%;
+}
+.cover2 {
+	margin-left: 320px;
+}
+
 </style>
